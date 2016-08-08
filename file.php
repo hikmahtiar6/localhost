@@ -117,7 +117,6 @@ require "config.php";
 				$('body').backstretch([
 				      "<?php echo $dir; ?>/bg/1.jpg",
                       "<?php echo $dir; ?>/bg/2.jpg",
-                      "<?php echo $dir; ?>/bg/3.jpg",
 				      "<?php echo $dir; ?>/bg/4.jpg",
 				  	], 
 				  	{
