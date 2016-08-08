@@ -104,8 +104,18 @@ require "config.php";
 				
 				<?php endif; ?>
 			<?php endforeach; ?>
+			<?php if(count($dataFix) == 0): ?>
+				<b style="color: #FFF; font-size: 16px;">
+					<center>
+						Data tidak ada
+					</center>
+				</b>
+			<?php endif; ?>
 			<div style="clear: both;"> &nbsp; </div>
+			
 			</div>
+			
+			
 			
 		</div>
 		
