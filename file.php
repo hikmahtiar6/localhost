@@ -54,7 +54,36 @@ require "config.php";
 		<div class="row">
 			<div style="width: 90%;background: rgba(255,255,255,0.3); padding: 20px 20px 0px 20px;margin: 0px auto !important;">
 			<?php foreach (glob('*') as $folder) : ?>
-				<?php if ($folder != 'index.php' && $folder != 'bower.json' && $folder != 'phpmyadmin' && $folder != 'bg' && $folder != 'bower_components' && $folder != 'arc' && $folder != 'bootstrap-3.3.5' && $folder != 'phpmyadmin.png') : ?>
+				<?php if ($folder != 'index.php' && $folder != 'localhost' && $folder != 'bg' && $folder != 'bower_components' && $folder != 'phpmyadmin') : ?>
+				<?php 
+				$staFolder = stat($folder);
+				$style = '';
+				$icon = 'glyphicon-folder-open';
+				if(!is_dir($folder)) {
+					$style = 'style="color: red;"';
+					$icon = 'glyphicon-file';
+				}
+				?>
+				
+				<div class="col-md-4 folder">
+					<a class="font-folder" href="<?php echo $folder; ?>" target="_blank" <?php echo $style; ?>>
+						<div class="col-md-3">
+							<i class="glyphicon <?php echo $icon; ?>" style="font-size: 50px;"></i>
+						</div>
+						
+						<div class="col-md-6">
+							<b style="font-size: 14px;">
+								<?php echo $folder; ?>
+							</b>
+							<br />
+							<span style="font-size: 12px;">
+								<?php echo date('d M Y H:i:s',$staFolder['mtime']); ?>
+							</span>
+						</div>
+					</a>
+				</div>
+				
+				<!--
 				<div class="col-md-4 folder">
 					<a class="font-folder" href="<?php echo $folder; ?>" target="_blank">
 						<?php if (!is_dir($folder)) : ?>
@@ -68,8 +97,12 @@ require "config.php";
 							<span <?php echo $style; ?>>
 								<?php echo $folder; ?>
 							</span>
+							<br />
+							<?php echo date('d M Y H:i:s',$staFolder['mtime']); ?>
 					</a>
 				</div>
+				-->
+				
 				<?php endif; ?>
 			<?php endforeach; ?>
 			<div style="clear: both;"> &nbsp; </div>
