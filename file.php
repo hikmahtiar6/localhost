@@ -60,9 +60,11 @@ require "config.php";
 					</a>
 				</div>
 				<div class="col-md-6">
-					<form method="POST" action="">
-						<input class="col-md-9" name="search" type="text" value="<?php echo $text; ?>" placeholder="masukan kata yang akan dicari.." autocomplete="off"/>
+					<form class="form-inline" method="POST" action="">
 						<input class="pull-right col-md-3 btn btn-primary" type="submit" value="Cari" />
+						<input class="col-md-9 pull-right form-control" name="search" type="text" value="<?php echo $text; ?>" 
+							style="text-align: left;"
+							placeholder="masukan kata yang akan dicari.." autocomplete="off"/>
 					</form>
 				</div>
 			</div>
@@ -84,7 +86,7 @@ require "config.php";
 					}
 					?>
 					
-					<div class="col-md-4 folder" style="height: 100px;">
+					<div class="col-md-4 folder" style="height: 135px; overflow: auto;">
 						<a class="font-folder" href="<?php echo $folder; ?>" target="_blank" <?php echo $style; ?>>
 							<div class="col-md-3">
 								<i class="glyphicon <?php echo $icon; ?>" style="font-size: 50px;"></i>
