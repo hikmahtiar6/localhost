@@ -1,5 +1,5 @@
 <?php
-require "config.php";
+	require "config.php";
 
 	$search = isset($_POST['search']);
 	$data = glob('*');
