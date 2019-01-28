@@ -81,7 +81,7 @@
 					$style = '';
 					$icon = 'glyphicon-folder-open';
 					if(!is_dir($folder)) {
-						$style = 'style="color: red;"';
+						$style = 'style="color: yellow;"';
 						$icon = 'glyphicon-file';
 					}
 					?>
